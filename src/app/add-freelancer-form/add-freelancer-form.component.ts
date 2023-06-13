@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import url from '../url';
 
 @Component({
   selector: 'app-add-freelancer-form',
@@ -24,9 +25,6 @@ export class AddFreelancerFormComponent {
     });
   }
 
-  // url: string = 'https://64868926beba6297278edf86.mockapi.io/';
-  url: string = 'http://localhost:3004/';
-
   isLoading = false;
   isError = false;
 
@@ -36,7 +34,7 @@ export class AddFreelancerFormComponent {
     console.log(this.myForm.value);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    fetch(`${this.url}freelancer/`,
+    fetch(`${url}freelancer/`,
       {
         method: 'POST',
         body: JSON.stringify(this.myForm.value),

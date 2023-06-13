@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Freelancer } from '../freelancer';
+import url from '../url';
 
 @Component({
   selector: 'app-freelancer-list',
@@ -26,15 +27,12 @@ export class FreelancerListComponent {
 
   selectedFreelancer = { id: 0, username: '', email: '', phone: '', skillsets: '', hobby: '' };
 
-  // url: string = 'https://64868926beba6297278edf86.mockapi.io/';
-  url: string = 'http://localhost:3004/';
-
   isLoading = false;
   isError = false;
 
   deleteFreelancer(id: any) {
     console.log('🚀 vv ~ delete id:', id);
-    fetch(`${this.url}freelancer/${id}`, { method: 'DELETE' })
+    fetch(`${url}freelancer/${id}`, { method: 'DELETE' })
       .then((response) => response.json())
       .then((data) => {
         this.status = 'ready';
@@ -68,7 +66,7 @@ export class FreelancerListComponent {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    fetch(`${this.url}freelancer/${this.selectedFreelancer.id}`, {
+    fetch(`${url}freelancer/${this.selectedFreelancer.id}`, {
       method: 'PUT',
       headers: myHeaders,
       body: JSON.stringify(this.myForm.value),

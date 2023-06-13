@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import url from './url';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,8 @@ export class AppComponent {
   freelancers: any;
   status = 'loading';
 
-  // url: string = 'https://64868926beba6297278edf86.mockapi.io/';
-  url: string = 'http://localhost:3004/';
   getFreelancers() {
-    fetch(`${this.url}freelancer`)
+    fetch(`${url}freelancer`)
       .then((response) => response.json())
       // .then(() => {
       .then(({ data }) => {
