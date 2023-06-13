@@ -10,7 +10,7 @@ import url from '../url';
 })
 export class FreelancerListComponent {
   constructor() {
-    this.myForm = new FormGroup({
+    this.editForm = new FormGroup({
       username: new FormControl(''),
       email: new FormControl(''),
       phone: new FormControl(''),
@@ -21,7 +21,7 @@ export class FreelancerListComponent {
 
   @Input() freelancers: Freelancer[] = [];
   @Input() status: string = 'loading';
-  myForm: FormGroup;
+  editForm: FormGroup;
 
   isOpenDialog = false;
 
@@ -50,7 +50,7 @@ export class FreelancerListComponent {
     this.isOpenDialog = true;
     this.selectedFreelancer = data;
     console.log('🚀 vv ~ this.selectedFreelancer:', this.selectedFreelancer);
-    this.myForm.setValue({
+    this.editForm.setValue({
       username: this.selectedFreelancer.username,
       email: this.selectedFreelancer.email,
       phone: this.selectedFreelancer.phone,
@@ -61,7 +61,7 @@ export class FreelancerListComponent {
 
   onSubmit() {
     this.isLoading = true;
-    console.log('vv this.myForm.value', this.myForm.value);
+    console.log('vv this.editForm.value', this.editForm.value);
     this.isOpenDialog = false;
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -69,7 +69,7 @@ export class FreelancerListComponent {
     fetch(`${url}freelancer/${this.selectedFreelancer.id}`, {
       method: 'PUT',
       headers: myHeaders,
-      body: JSON.stringify(this.myForm.value),
+      body: JSON.stringify(this.editForm.value),
     })
       .then((response) => response.json())
       .then((data) => {

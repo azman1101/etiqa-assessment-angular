@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import url from './url';
 
 @Component({
@@ -7,7 +8,10 @@ import url from './url';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'angular-102';
+  constructor(private modalService: NgbModal) {
+  }
+
+  title = 'etiqa';
 
 
   ngOnInit(): void {

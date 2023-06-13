@@ -1,22 +1,46 @@
-<button (click)="isOpen=!isOpen">Add new freelancer</button>
+<div>
+  <div class="d-flex flex-row-reverse">
+    <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#addFreelancerModal">
+      Add new freelancer
+    </button>
+  </div>
 
-<dialog [open]="isOpen">
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="display: flex; flex-direction:column;">
-    <label>Name:</label>
-    <input type="text" formControlName="name">
+  <div class="modal fade" id="addFreelancerModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Add new freelancer</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" placeholder="name">
+              <label for="floatingUsername">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingEmail" formControlName="email" placeholder="email">
+              <label for="floatingEmail">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="phone" class="form-control" id="floatingPhone" formControlName="phone" placeholder="phone">
+              <label for="floatingPhone">Phone</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingSkill" formControlName="skillsets"
+                placeholder="skill">
+              <label for="floatingSkill">Skillsets</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingHobby" formControlName="hobby" placeholder="hobby">
+              <label for="floatingHobby">Hobby</label>
+            </div>
 
-    <label>Email:</label>
-    <input type="email" formControlName="email">
-
-    <label>Phone:</label>
-    <input type="phone" formControlName="phone">
-
-    <label>Skillsets:</label>
-    <input type="text" formControlName="skillsets">
-
-    <label>Hobby:</label>
-    <input type="text" formControlName="hobby">
-
-    <button type="submit">Submit</button>
-  </form>
-</dialog>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

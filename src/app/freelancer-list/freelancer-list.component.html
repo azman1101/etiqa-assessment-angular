@@ -1,47 +1,75 @@
-<dialog [open]="isOpenDialog">
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="display: flex; flex-direction:column;">
-    <label>Name:</label>
-    <input type="text" formControlName="username">
+<div>
+  <div class="modal fade" id="editFreelancerModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Edit freelancer details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingEditUsername" formControlName="username"
+                placeholder="name">
+              <label for="floatingEditUsername">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingEditEmail" formControlName="email" placeholder="email">
+              <label for="floatingEditEmail">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="phone" class="form-control" id="floatingEditPhone" formControlName="phone" placeholder="phone">
+              <label for="floatingEditPhone">Phone</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingEditSkill" formControlName="skillsets"
+                placeholder="skill">
+              <label for="floatingEditSkill">Skillsets</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingEditHobby" formControlName="hobby" placeholder="hobby">
+              <label for="floatingEditHobby">Hobby</label>
+            </div>
 
-    <label>Email:</label>
-    <input type="email" formControlName="email">
-
-    <label>Phone:</label>
-    <input type="phone" formControlName="phone">
-
-    <label>Skillsets:</label>
-    <input type="text" formControlName="skillsets">
-
-    <label>Hobby:</label>
-    <input type="text" formControlName="hobby">
-
-    <button type="submit">Submit</button>
-  </form>
-</dialog>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div *ngIf="status === 'ready'">
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Skillsets</th>
-      <th>Hobby</th>
-      <th>Actions</th>
-    </tr>
-    <tr *ngFor="let freelancer of freelancers">
-      <td>{{ freelancer.id }}</td>
-      <td>{{ freelancer.username }}</td>
-      <td>{{ freelancer.email }}</td>
-      <td>{{ freelancer.phone }}</td>
-      <td>{{ freelancer.skillsets }}</td>
-      <td>{{ freelancer.hobby }}</td>
-      <td>
-        <button (click)="editFreelancer(freelancer)">Edit</button>
-        <button (click)="deleteFreelancer(freelancer.id)">Delete</button>
-      </td>
-    </tr>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Skillsets</th>
+        <th>Hobby</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let freelancer of freelancers">
+        <td>{{ freelancer.id }}</td>
+        <td>{{ freelancer.username }}</td>
+        <td>{{ freelancer.email }}</td>
+        <td>{{ freelancer.phone }}</td>
+        <td>{{ freelancer.skillsets }}</td>
+        <td>{{ freelancer.hobby }}</td>
+        <td>
+          <button (click)="editFreelancer(freelancer)" type="button" class="btn text-secondary" data-bs-toggle="modal"
+            data-bs-target="#editFreelancerModal">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button class="btn text-danger" (click)="deleteFreelancer(freelancer.id)"><i class="bi bi-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 
 </div>

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FreelancerListComponent } from './freelancer-list/freelancer-list.component';
 import { AddFreelancerFormComponent } from './add-freelancer-form/add-freelancer-form.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +16,8 @@ import { AddFreelancerFormComponent } from './add-freelancer-form/add-freelancer
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

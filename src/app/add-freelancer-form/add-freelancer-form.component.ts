@@ -9,15 +9,15 @@ import url from '../url';
 })
 export class AddFreelancerFormComponent {
   isOpen = false;
-  myForm: FormGroup;
+  addForm: FormGroup;
 
   // @Input() data: number[] = [];
 
   constructor() {
     // console.log('🚀 vv ~ data:', this.data);
 
-    this.myForm = new FormGroup({
-      name: new FormControl(''),
+    this.addForm = new FormGroup({
+      username: new FormControl(''),
       email: new FormControl(''),
       phone: new FormControl(''),
       skillsets: new FormControl(''),
@@ -31,13 +31,13 @@ export class AddFreelancerFormComponent {
   onSubmit() {
     this.isLoading = true;
 
-    console.log(this.myForm.value);
+    console.log(this.addForm.value);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     fetch(`${url}freelancer/`,
       {
         method: 'POST',
-        body: JSON.stringify(this.myForm.value),
+        body: JSON.stringify(this.addForm.value),
         headers: myHeaders,
       })
       .then((response) => response.json())
@@ -55,8 +55,8 @@ export class AddFreelancerFormComponent {
   }
 
   resetForm() {
-    this.myForm = new FormGroup({
-      name: new FormControl(''),
+    this.addForm = new FormGroup({
+      username: new FormControl(''),
       email: new FormControl(''),
       phone: new FormControl(''),
       skillsets: new FormControl(''),
