@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private modalService: NgbModal) {
   }
 
-  title = 'etiqa';
+  title = 'Freelancer Database';
 
 
   ngOnInit(): void {
