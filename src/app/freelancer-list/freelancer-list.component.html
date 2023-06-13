@@ -1,0 +1,50 @@
+<dialog [open]="isOpenDialog">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="display: flex; flex-direction:column;">
+    <label>Name:</label>
+    <input type="text" formControlName="username">
+
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+
+    <label>Phone:</label>
+    <input type="phone" formControlName="phone">
+
+    <label>Skillsets:</label>
+    <input type="text" formControlName="skillsets">
+
+    <label>Hobby:</label>
+    <input type="text" formControlName="hobby">
+
+    <button type="submit">Submit</button>
+  </form>
+</dialog>
+
+<div *ngIf="status === 'ready'">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Skillsets</th>
+      <th>Hobby</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let freelancer of freelancers">
+      <td>{{ freelancer.id }}</td>
+      <td>{{ freelancer.username }}</td>
+      <td>{{ freelancer.email }}</td>
+      <td>{{ freelancer.phone }}</td>
+      <td>{{ freelancer.skillsets }}</td>
+      <td>{{ freelancer.hobby }}</td>
+      <td>
+        <button (click)="editFreelancer(freelancer)">Edit</button>
+        <button (click)="deleteFreelancer(freelancer.id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+</div>
+<div *ngIf="status === 'loading'">Loading...</div>
+<div *ngIf="status === 'error'">Error occurred! Please check your internet connection.</div>
+<ng-template #loading> Loading... </ng-template>

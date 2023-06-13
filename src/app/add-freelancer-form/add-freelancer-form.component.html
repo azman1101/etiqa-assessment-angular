@@ -1,0 +1,22 @@
+<button (click)="isOpen=!isOpen">Add new freelancer</button>
+
+<dialog [open]="isOpen">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="display: flex; flex-direction:column;">
+    <label>Name:</label>
+    <input type="text" formControlName="name">
+
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+
+    <label>Phone:</label>
+    <input type="phone" formControlName="phone">
+
+    <label>Skillsets:</label>
+    <input type="text" formControlName="skillsets">
+
+    <label>Hobby:</label>
+    <input type="text" formControlName="hobby">
+
+    <button type="submit">Submit</button>
+  </form>
+</dialog>
