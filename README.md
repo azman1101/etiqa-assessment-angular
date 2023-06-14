@@ -1,4 +1,4 @@
-# Etiqa Assessment Angular
+# etiqa-assessment-angular
 
 This is a web application designed as an assessment project to showcase my skills in Angular and Bootstrap. It allows companies to efficiently manage and collaborate with freelancers by providing CRUD functionality for freelancer profiles. The application offers a user-friendly interface and responsive design, ensuring a seamless experience across devices. This applications demonstrates my ability to develop robust web applications using modern front-end technologies while addressing the specific requirements of managing a network of freelancers. 
 
