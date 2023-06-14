@@ -76,6 +76,12 @@
   </table>
 
 </div>
-<div *ngIf="status === 'loading'">Loading...</div>
+<div *ngIf="status === 'loading'">
+  <div class="text-center">
+    <div class="spinner-grow text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
 <div *ngIf="status === 'error'">Error occurred! Please check your internet connection.</div>
 <ng-template #loading> Loading... </ng-template>

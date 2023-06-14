@@ -36,6 +36,7 @@ export class FreelancerListComponent {
   isError = false;
 
   deleteFreelancer(id: any) {
+    this.status = 'loading';
     console.log('🚀 vv ~ delete id:', id);
     fetch(`${url}freelancer/${id}`, { method: 'DELETE' })
       .then((response) => response.json())
@@ -93,6 +94,7 @@ export class FreelancerListComponent {
 
 
   getFreelancers() {
+    this.status = 'loading';
     fetch(`${url}freelancer`)
       .then((response) => response.json())
       .then(({ data }) => {
