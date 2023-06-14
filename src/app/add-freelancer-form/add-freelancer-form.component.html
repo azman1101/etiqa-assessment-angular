@@ -15,7 +15,7 @@
         <div class="modal-body">
           <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" placeholder="name">
+              <input type="text" class="form-control" id="floatingUsername" formControlName="username" placeholder="name">
               <label for="floatingUsername">Username</label>
             </div>
             <div class="form-floating mb-3">

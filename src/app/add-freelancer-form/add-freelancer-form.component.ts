@@ -46,6 +46,7 @@ export class AddFreelancerFormComponent {
         this.isLoading = false;
         this.resetForm();
         this.isOpen = false;
+        location.reload();
       })
       .catch((error) => {
         this.isLoading = false;
