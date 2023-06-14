@@ -1,27 +1,27 @@
-# Etiqa Assessment
+# CDN - Complete Developer Network
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+## Features
 
-## Development server
+- User-friendly interface powered by Angular and Bootstrap.
+- Secure authentication and authorization system.
+- Dashboard for companies to manage and view their list of freelancers.
+- CRUD operations for freelancers, including creating, reading, updating, and deleting freelancer profiles.
+- Ability to search and filter freelancers based on various criteria such as skills, availability, and location.
+- Detailed freelancer profiles displaying information such as skills, experience, portfolio, and availability.
+- Communication tools to facilitate interaction between companies and freelancers.
+- Notifications and alerts to keep companies updated on freelancer activity.
+- Responsive design, ensuring the application works seamlessly across different devices.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prerequisites
 
-## Code scaffolding
+Before running the application, ensure you have the following software installed:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js and npm (Node Package Manager)
+- Angular CLI (Command Line Interface)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository from GitHub:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```shell
+git clone https://github.com/your-username/cdn-complete-developer-network.git
