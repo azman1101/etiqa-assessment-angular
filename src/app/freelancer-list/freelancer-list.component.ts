@@ -19,8 +19,13 @@ export class FreelancerListComponent {
     });
   }
 
-  @Input() freelancers: Freelancer[] = [];
-  @Input() status: string = 'loading';
+  ngOnInit(): void {
+    this.getFreelancers()
+  }
+
+  freelancers: any;
+  status = 'loading';
+
   editForm: FormGroup;
 
   isOpenDialog = false;
@@ -37,6 +42,7 @@ export class FreelancerListComponent {
       .then((data) => {
         this.status = 'ready';
         this.freelancers = data;
+        this.getFreelancers();
       })
       .catch((error) => {
         console.log('🚀 vv ~ error:', error);
@@ -76,10 +82,27 @@ export class FreelancerListComponent {
         console.log('🚀 vv ~ data:', data);
         this.isLoading = false;
         this.isOpenDialog = false;
+        this.getFreelancers()
       })
       .catch((error) => {
         this.isLoading = false;
         this.isError = true;
+        console.error('There was an error!', error);
+      });
+  }
+
+
+  getFreelancers() {
+    fetch(`${url}freelancer`)
+      .then((response) => response.json())
+      .then(({ data }) => {
+        console.log('🚀 vv ~ data:', data);
+        this.status = 'ready';
+        this.freelancers = data;
+      })
+      .catch((error) => {
+        console.log('🚀 vv ~ error:', error);
+        this.status = 'error';
         console.error('There was an error!', error);
       });
   }
