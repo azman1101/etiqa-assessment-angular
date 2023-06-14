@@ -1,15 +1,11 @@
-# CDN - Complete Developer Network
+# Etiqa Assessment Angular
 
 ## Features
 
-- User-friendly interface powered by Angular and Bootstrap.
-- Secure authentication and authorization system.
-- Dashboard for companies to manage and view their list of freelancers.
-- CRUD operations for freelancers, including creating, reading, updating, and deleting freelancer profiles.
-- Ability to search and filter freelancers based on various criteria such as skills, availability, and location.
-- Detailed freelancer profiles displaying information such as skills, experience, portfolio, and availability.
+- User-friendly interface with by Angular and Bootstrap.
+- Dashboard for CDN - Complete Developer Network to manage and view their list of freelancers.
+- Detailed freelancer profiles displaying information such as contact info, skills, hobby.
 - Communication tools to facilitate interaction between companies and freelancers.
-- Notifications and alerts to keep companies updated on freelancer activity.
 - Responsive design, ensuring the application works seamlessly across different devices.
 
 ## Prerequisites
@@ -22,6 +18,21 @@ Before running the application, ensure you have the following software installed
 ## Installation
 
 1. Clone the repository from GitHub:
-
 ```shell
-git clone https://github.com/your-username/cdn-complete-developer-network.git
+git clone git@github.com:azman1101/etiqa-assessment-angular.git
+```
+
+2. Navigate into project directory
+```shell
+cd etiqa-assessment-angular
+```
+
+3. Install all dependencies
+```shell
+yarn
+```
+
+4. Run the project
+```shell
+ng serve
+```
